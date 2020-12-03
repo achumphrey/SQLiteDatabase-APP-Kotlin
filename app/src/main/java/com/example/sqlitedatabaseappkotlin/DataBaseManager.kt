@@ -14,7 +14,7 @@ class DataBaseManager (private val context: Context) {
     //Method to open a writable database connection
     @Throws(SQLException::class)
     fun open(): DataBaseManager? {
-        dbHelper = DataBaseHelper(context)
+        dbHelper = DataBaseHelper.getInstance(context)
         database = dbHelper.writableDatabase
 
         return this
