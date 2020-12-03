@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SQLiteDatabaseAPPKotlin</string>
+    <string name="empty_list_text">Empty List Text</string>
+    <string name="add_record">Add Record</string>
+    <string name="enter_title">Enter Title</string>
+    <string name="enter_desc">Enter Description</string>
+    <string name="btn_update">Update</string>
+    <string name="btn_delete">Delete</string>
+    <string name="enter_descrip">Enter Description</string>
+</resources>
