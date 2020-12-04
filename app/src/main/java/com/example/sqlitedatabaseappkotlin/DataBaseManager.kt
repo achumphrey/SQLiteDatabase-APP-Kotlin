@@ -84,7 +84,7 @@ class DataBaseManager (private val context: Context) {
             null,
             null,
             null,
-            null
+            DataBaseHelper.SUBJECT + " DESC" //ASC for ascending order
         )
         cursor?.moveToFirst()
         close()
