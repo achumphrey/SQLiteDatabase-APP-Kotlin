@@ -21,7 +21,7 @@ class DataBaseManager (private val context: Context) {
     }
 
     //Method to close database connection
-    fun close() {
+    private fun close() {
         dbHelper.close()
     }
 

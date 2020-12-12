@@ -18,7 +18,7 @@ class CountryListActivity : AppCompatActivity() {
 
     //Array of column titles in the cursor
     // which was retrieved from the database
-    val from = arrayOf(
+    private val from = arrayOf(
         DataBaseHelper.ID,
         DataBaseHelper.SUBJECT,
         DataBaseHelper.DESC
@@ -26,7 +26,7 @@ class CountryListActivity : AppCompatActivity() {
 
     //Array of view components to bind the data
     // from the cursor in order to display them
-    val to = intArrayOf(
+    private val to = intArrayOf(
         R.id.tvId,
         R.id.tvTitle,
         R.id.tvDesc
@@ -56,21 +56,21 @@ class CountryListActivity : AppCompatActivity() {
 
         //OnclickListener for list items
         listView.onItemClickListener =
-            OnItemClickListener { parent, view, position, id ->
+            OnItemClickListener { _, view, _, _ ->
                 val idTextView = view.findViewById<TextView>(R.id.tvId)
                 val titleTextView = view.findViewById<TextView>(R.id.tvTitle)
                 val descTextView = view.findViewById<TextView>(R.id.tvDesc)
                 val itemId = idTextView.text.toString()
                 val itemTitle = titleTextView.text.toString()
                 val itemDesc = descTextView.text.toString()
-                val modify_intent = Intent(
+                val modifyIntent = Intent(
                     applicationContext,
                     ModifyCountryActivity::class.java
                 )
-                modify_intent.putExtra("id", itemId)
-                modify_intent.putExtra("title", itemTitle)
-                modify_intent.putExtra("desc", itemDesc)
-                startActivity(modify_intent)
+                modifyIntent.putExtra("id", itemId)
+                modifyIntent.putExtra("title", itemTitle)
+                modifyIntent.putExtra("desc", itemDesc)
+                startActivity(modifyIntent)
             }
 
     }
@@ -83,11 +83,11 @@ class CountryListActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         if (id == R.id.add_record) {
-            val add_mem = Intent(
+            val addMem = Intent(
                 this@CountryListActivity,
                 AddCountryActivity::class.java
             )
-            startActivity(add_mem)
+            startActivity(addMem)
         }
 
         return super.onOptionsItemSelected(item)
