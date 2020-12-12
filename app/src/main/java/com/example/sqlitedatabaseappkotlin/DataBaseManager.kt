@@ -13,7 +13,7 @@ class DataBaseManager (private val context: Context) {
 
     //Method to open a writable database connection
     @Throws(SQLException::class)
-    fun open(): DataBaseManager? {
+    fun open(): DataBaseManager {
         dbHelper = DataBaseHelper.getInstance(context)
         database = dbHelper.writableDatabase
 
@@ -48,7 +48,7 @@ class DataBaseManager (private val context: Context) {
         val i = database.update(
             DataBaseHelper.TABLE_NAME,
             contentValues,
-            DataBaseHelper._ID + " = " + _id,
+            DataBaseHelper.ID + " = " + _id,
             null
         )
         close()
@@ -59,7 +59,7 @@ class DataBaseManager (private val context: Context) {
     fun delete(_id: Long) {
         database.delete(
             DataBaseHelper.TABLE_NAME,
-            DataBaseHelper._ID + " = " + _id,
+            DataBaseHelper.ID + " = " + _id,
             null
         )
         close()
@@ -71,7 +71,7 @@ class DataBaseManager (private val context: Context) {
         //create a string array of column titles
         // whose data you want to retrieve
         val columns = arrayOf(
-            DataBaseHelper._ID,
+            DataBaseHelper.ID,
             DataBaseHelper.SUBJECT,
             DataBaseHelper.DESC
         )

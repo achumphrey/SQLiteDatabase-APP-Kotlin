@@ -19,7 +19,7 @@ class CountryListActivity : AppCompatActivity() {
     //Array of column titles in the cursor
     // which was retrieved from the database
     val from = arrayOf(
-        DataBaseHelper._ID,
+        DataBaseHelper.ID,
         DataBaseHelper.SUBJECT,
         DataBaseHelper.DESC
     )

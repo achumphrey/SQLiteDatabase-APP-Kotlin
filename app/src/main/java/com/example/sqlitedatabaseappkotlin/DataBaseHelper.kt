@@ -44,7 +44,7 @@ class DataBaseHelper private constructor(context: Context):
         const val TABLE_NAME = "Countries"
 
         //Table columns
-        const val _ID = "_id"
+        const val ID = "_id"
         const val SUBJECT = "subject"
         const val DESC = "description"
 
@@ -57,7 +57,7 @@ class DataBaseHelper private constructor(context: Context):
         //Query statement to create the table
         const val CREATE_TABLE = "CREATE TABLE if not exists " +
                 TABLE_NAME + "(" +
-                _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 SUBJECT + " TEXT NOT NULL, " +
                 DESC + " TEXT)"
     }
